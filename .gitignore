@@ -1,0 +1,9 @@
+/target
+/data/raw/
+.directory
+/data/archive/
+/data/osm/*.pbf
+/data/gtfs/
+/data/map/
+/data/osm/walk.bin
+/.tyrkobus-export

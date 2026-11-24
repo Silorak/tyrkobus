@@ -1,0 +1,5 @@
+{
+  "RUSTSEC-2026-0186": "memmap2 0.5 via osmpbf 0.3.8 (newest, pins ^0.5). Bug is in advise_range/flush_range, which osmpbf never calls (it only maps the file read-only); used offline on our own downloaded OSM extract. Reviewed 2026-11-24.",
+  "RUSTSEC-2026-0543": "chrono is unmaintained (no known security bug). Replacing it with jiff is planned; until then accepted. Reviewed 2026-11-24.",
+  "RUSTSEC-2026-0555": "chrono-tz is unmaintained (no known security bug). Goes away with the move to jiff, which ships its own time zone data. Reviewed 2026-11-24."
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Check arriva.sk for timetable changes twice a day
+
+[Timer]
+OnCalendar=*-*-* 06,18:00
+RandomizedDelaySec=30min
+# Run at next boot/login if the PC was off at the scheduled time
+Persistent=true
+
+[Install]
+WantedBy=timers.target

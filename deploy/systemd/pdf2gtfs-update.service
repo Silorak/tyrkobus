@@ -1,0 +1,13 @@
+[Unit]
+Description=Fetch Arriva Nové Zámky timetable PDFs and publish the GTFS feed if it passes the checks
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/tyrkobus
+# A failed download must not block rebuilding from the archive we already have;
+# failures are in the journal. The build only replaces the live feed if it
+# passes the checks; a refused build exits 2 and fails this unit.
+ExecStart=-%h/tyrkobus/target/release/pdf2gtfs update
+ExecStart=%h/tyrkobus/target/release/pdf2gtfs build
